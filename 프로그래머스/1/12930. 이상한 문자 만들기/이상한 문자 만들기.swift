@@ -11,7 +11,7 @@ func solution(_ s:String) -> String {
             result += String(charS).uppercased();
             count += 1;
         } else {
-            result += String(charS).lowercased;
+            result += String(charS).lowercased();
             count += 1;
         }
     }
