@@ -3,15 +3,15 @@ func solution(_ s:String) -> String {
     var count: Int = 0;
     var result: String = "";
     
-    for i in 0..<s.count {
-        if s[s.index(s.startIndex, offsetBy: i)] == " " {
-            result += String(s[s.index(s.startIndex, offsetBy: i)]);
+    for charS in s {
+        if charS == " " {
+            result += String(charS);
             count = 0;
         } else if count % 2 == 0 {
-            result += String(s[s.index(s.startIndex, offsetBy: i)]).uppercased();
+            result += String(charS).uppercased();
             count += 1;
         } else {
-            result += String(s[s.index(s.startIndex, offsetBy: i)]).lowercased;
+            result += String(charS).lowercased;
             count += 1;
         }
     }
