@@ -171,49 +171,62 @@ import Foundation
 
 
 // Level. 4
+
+enum Operation {
+    case Add;
+    case Substract;
+    case Multiply;
+    case Divide;
+    case Remain;
+}
+
 class Calculator {
     
-    public let num1: Int;
-    public let num2: Int;
+    public let firstInt: Int;
+    public let secondInt: Int;
+    public let operater: Operation;
     
-    init(_ num1: Int, _ num2: Int) {
-        self.num1 = num1;
-        self.num2 = num2;
+    init(_ firstInt: Int, _ secondInt: Int, _ operator: Operation) {
+        self.firstInt = firstInt;
+        self.secondInt = secondInt;
+        self.operater = `operator`;
     }
     
-    func calculation(_ op: String) -> Double {
-        var abop: AbstractOperation;
+    func calculation() -> Double {
+        var operation: AbstractOperation;
         
-        switch op {
-        case "AddOperation":
-            abop = AddOperation();
-        case "SubstractOperation":
-            abop = SubstractOperation();
-        case "MultiplyOperation":
-            abop = MultiplyOperation();
-        case "DivideOperation":
-            abop = DivideOperation();
-        case "RemainOperation":
-            abop = RemainderOperation();
-        default:
-            return 0;
+        switch operater {
+        case .Add:
+            operation = AddOperation();
+        case .Substract:
+            operation = SubstractOperation();
+        case .Multiply:
+            operation = MultiplyOperation();
+        case .Divide:
+            operation = DivideOperation();
+        case .Remain:
+            operation = RemainderOperation();
         }
-        return abop.operation(num1, num2);
+        
+        return operation.operation(firstInt, secondInt);
     }
     
 }
 
+// 추상클래스
 class AbstractOperation {
     
-    func operation(_ num1: Int, _ num2: Int) -> Double {
+    func operation(_ firstInt: Int, _ secondInt: Int) -> Double {
         return 0;
     }
 }
 
 class AddOperation : AbstractOperation{
 
-    override func operation(_ num1: Int, _ num2: Int) -> Double {
-        let add: Double? = Double(num1) + Double(num2);
+    override func operation(_ firstInt: Int, _ secondInt: Int) -> Double {
+        
+        let add: Double? = Double(firstInt) + Double(secondInt);
+        
         if let result = add {
             return result;
         }
@@ -222,8 +235,10 @@ class AddOperation : AbstractOperation{
 
 class SubstractOperation : AbstractOperation{
 
-    override func operation(_ num1: Int, _ num2: Int) -> Double {
-        let substract: Double? = Double(num1) - Double(num2);
+    override func operation(_ firstInt: Int, _ secondInt: Int) -> Double {
+        
+        let substract: Double? = Double(firstInt) - Double(secondInt);
+        
         if let result = substract {
             return result;
         }
@@ -232,8 +247,10 @@ class SubstractOperation : AbstractOperation{
 
 class MultiplyOperation : AbstractOperation{
 
-    override func operation(_ num1: Int, _ num2: Int) -> Double {
-        let multiply: Double? = Double(num1) * Double(num2);
+    override func operation(_ firstInt: Int, _ secondInt: Int) -> Double {
+        
+        let multiply: Double? = Double(firstInt) * Double(secondInt);
+        
         if let result = multiply {
             return result;
         }
@@ -242,8 +259,10 @@ class MultiplyOperation : AbstractOperation{
 
 class DivideOperation : AbstractOperation{
 
-    override func operation(_ num1: Int, _ num2: Int) -> Double {
-        let divided: Double? = Double(num1) / Double(num2);
+    override func operation(_ firstInt: Int, _ secondInt: Int) -> Double {
+        
+        let divided: Double? = Double(firstInt) / Double(secondInt);
+        
         if let result = divided {
             return result;
         }
@@ -252,21 +271,21 @@ class DivideOperation : AbstractOperation{
 
 class RemainderOperation : AbstractOperation{
 
-    override func operation(_ num1: Int, _ num2: Int) -> Double {
-        let remainder: Double? = Double(num1).truncatingRemainder(dividingBy: Double(num2));
+    override func operation(_ firstInt: Int, _ secondInt: Int) -> Double {
+        
+        let remainder: Double? = Double(firstInt).truncatingRemainder(dividingBy: Double(secondInt));
+        
         if let result = remainder {
             return result;
         }
     }
 }
 
-let calculator = Calculator(80, 4); // 프로퍼티 초기화
-
-let addResult = calculator.calculation("AddOperation"); // 덧셈 연산;
-let subtractResult = calculator.calculation("SubstractOperation"); // 뺄셈 연산
-let multiplyResult = calculator.calculation("MultiplyOperation"); // 곱셈 연산
-let divideResult = calculator.calculation("DivideOperation"); // 나눗셈 연산
-let remainderResult = calculator.calculation("RemainderOperation"); // 나머지 연산
+let addResult = Calculator(80, 4, .Add).calculation(); // 덧셈 연산
+let subtractResult = Calculator(54, 4, .Substract).calculation(); // 뺄셈 연산
+let multiplyResult = Calculator(356, 4, .Multiply).calculation(); // 곱셈 연산
+let divideResult = Calculator(897, 4, .Divide).calculation(); // 나눗셈 연산
+let remainderResult = Calculator(35, 4, .Remain).calculation(); // 나머지 연산
 
 print("addResult : \(addResult)");
 print("subtractResult : \(subtractResult)");
