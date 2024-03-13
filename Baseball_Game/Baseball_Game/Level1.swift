@@ -21,8 +21,12 @@ public class Baseball {
     public func getBaseballNumbers() -> Array<Int> {
         return baseballNumbers;
     }
+    
+    // 외부에서 숫자 야구 번호 값을 입력할 때 사용
+    public func setBaseballNumbers(_ baseballNumbers: Array<Int>) {
+        self.baseballNumbers = baseballNumbers;
+    }
+    
 }
-//
-//let baseballGame: Baseball = Baseball();
-//print("랜덤한 숫자 3개 : \(baseballGame.printNumbers())");
+
 

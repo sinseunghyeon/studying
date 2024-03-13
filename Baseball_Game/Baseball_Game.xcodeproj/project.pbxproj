@@ -10,6 +10,8 @@
 		FFAB8EB82B9FED7700F3E1BB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EB72B9FED7700F3E1BB /* main.swift */; };
 		FFAB8EBF2BA0047700F3E1BB /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EBE2BA0047700F3E1BB /* Level2.swift */; };
 		FFAB8EC12BA0049700F3E1BB /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC02BA0049700F3E1BB /* Level1.swift */; };
+		FFAB8EC52BA088AA00F3E1BB /* CaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC42BA088AA00F3E1BB /* CaseError.swift */; };
+		FFAB8EC72BA0890100F3E1BB /* CaseErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC62BA0890100F3E1BB /* CaseErrorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		FFAB8EB72B9FED7700F3E1BB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FFAB8EBE2BA0047700F3E1BB /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
 		FFAB8EC02BA0049700F3E1BB /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
+		FFAB8EC42BA088AA00F3E1BB /* CaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseError.swift; sourceTree = "<group>"; };
+		FFAB8EC62BA0890100F3E1BB /* CaseErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseErrorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				FFAB8EB72B9FED7700F3E1BB /* main.swift */,
 				FFAB8EC02BA0049700F3E1BB /* Level1.swift */,
 				FFAB8EBE2BA0047700F3E1BB /* Level2.swift */,
+				FFAB8EC42BA088AA00F3E1BB /* CaseError.swift */,
+				FFAB8EC62BA0890100F3E1BB /* CaseErrorController.swift */,
 			);
 			path = Baseball_Game;
 			sourceTree = "<group>";
@@ -126,9 +132,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFAB8EC52BA088AA00F3E1BB /* CaseError.swift in Sources */,
 				FFAB8EC12BA0049700F3E1BB /* Level1.swift in Sources */,
 				FFAB8EB82B9FED7700F3E1BB /* main.swift in Sources */,
 				FFAB8EBF2BA0047700F3E1BB /* Level2.swift in Sources */,
+				FFAB8EC72BA0890100F3E1BB /* CaseErrorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
