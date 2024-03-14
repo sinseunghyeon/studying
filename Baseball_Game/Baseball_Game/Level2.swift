@@ -1,55 +1,86 @@
 
 import Foundation
 
-class FindBaseballNumbers: Baseball {
+class FindBaseballNumbers: InitBaseball {
     
     private var strike: Int = 0; // 스트라이크 변수
     private var ball: Int = 0;  // 볼 변수
     private var out: Int = 0;   // 아웃 변수
     
+    private let setScore: SetScore; // SetScore() 인스턴스
+    
     public var inputNumbers: Array<Int> = []; // 입력 받은 세 개의 숫자 배열
     public var baseballNumbers: Array<Int> = []; // 랜덤한 세 개의 숫자 야구번호 배열
     
+    init(setScore: SetScore) {
+        self.setScore = setScore;
+    }
+    
     // 입력 받은 배열과 랜덤 숫자 배열을 비교하는 함수
-    public func checkNumbers(_ inputNumbers: Array<Int>) {
+    public func checkNumbers(_ inputNumbers: Array<Int>) -> Bool {
         self.baseballNumbers = super.getBaseballNumbers();
+        self.setScore.setInputCount();
         
-        for index in 0..<inputNumbers.count {
-            if baseballNumbers.contains(inputNumbers[index]) {
-                if inputNumbers[index] == baseballNumbers[index] {
-                    self.strike += 1;
+        if !inputNumbers.isEmpty {
+            for index in 0..<inputNumbers.count {
+                if baseballNumbers.contains(inputNumbers[index]) {
+                    if inputNumbers[index] == baseballNumbers[index] {
+                        self.strike += 1;
+                    } else {
+                        self.ball += 1;
+                    }
                 } else {
-                    self.ball += 1;
+                    self.out += 1;
                 }
-            } else {
-                self.out += 1;
             }
+            
+            return printResult();
+        } else {
+            return true;
         }
     }
     
     // 결과값 출력 함수
-    public func printResult() {
-        print("\(strike) S, \(ball) B, \(out) Out");
+    public func printResult() -> Bool {
+
         if self.strike == 3 {
-            print("축하합니다! 정답입니다!")
+            print("");
+            print("◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎ 축하합니다! 정답입니다! ◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎");
+            
+            self.setScore.setGameCount();
+            self.setScore.setGameScores();
+            self.setScore.setZeroInputCount();
+            
+            self.strike = 0;
+            self.ball = 0;
+            self.out = 0;
+            
+            return false;
+        } else {
+            print("\(strike) S, \(ball) B, \(out) Out");
+            print("랜덤한 숫자 3개 : \(super.getBaseballNumbers())");
+            print("");
+            
+            self.strike = 0;
+            self.ball = 0;
+            self.out = 0;
+            
+            return true;
         }
-        self.strike = 0;
-        self.ball = 0;
-        self.out = 0;
     }
     
 }
 
 
-
-public class Main {
+// 입력 받은 값을 배열로 반환해주는 클래스
+public class ChangeToInt {
     
     func changeStringToInt(_ inputString: String?) -> Array<Int> {
         
         var numbers: Array<Int> = [];
         
         guard let isNumber: String = inputString else {
-            print("올바른 값이 입력되지 않았습니다.");
+            printError(.cantValue)
             return [];
         }
         
@@ -60,12 +91,8 @@ public class Main {
                 return [];
             }
             
-            guard toInt != 0 && !numbers.contains(toInt) else {
-                if toInt == 0 {
-                    printError(.cantUseZero);
-                } else {
-                    printError(.cantSameNumber);
-                }
+            guard !numbers.contains(toInt) else {
+                printError(.cantSameNumber);
                 return[];
             }
             

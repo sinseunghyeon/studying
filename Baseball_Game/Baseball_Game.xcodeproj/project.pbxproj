@@ -12,6 +12,8 @@
 		FFAB8EC12BA0049700F3E1BB /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC02BA0049700F3E1BB /* Level1.swift */; };
 		FFAB8EC52BA088AA00F3E1BB /* CaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC42BA088AA00F3E1BB /* CaseError.swift */; };
 		FFAB8EC72BA0890100F3E1BB /* CaseErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC62BA0890100F3E1BB /* CaseErrorController.swift */; };
+		FFAB8EC92BA30C6A00F3E1BB /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8EC82BA30C6A00F3E1BB /* Level4.swift */; };
+		FFAB8ECB2BA312D000F3E1BB /* Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB8ECA2BA312D000F3E1BB /* Level5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +35,8 @@
 		FFAB8EC02BA0049700F3E1BB /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
 		FFAB8EC42BA088AA00F3E1BB /* CaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseError.swift; sourceTree = "<group>"; };
 		FFAB8EC62BA0890100F3E1BB /* CaseErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseErrorController.swift; sourceTree = "<group>"; };
+		FFAB8EC82BA30C6A00F3E1BB /* Level4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
+		FFAB8ECA2BA312D000F3E1BB /* Level5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				FFAB8EBE2BA0047700F3E1BB /* Level2.swift */,
 				FFAB8EC42BA088AA00F3E1BB /* CaseError.swift */,
 				FFAB8EC62BA0890100F3E1BB /* CaseErrorController.swift */,
+				FFAB8EC82BA30C6A00F3E1BB /* Level4.swift */,
+				FFAB8ECA2BA312D000F3E1BB /* Level5.swift */,
 			);
 			path = Baseball_Game;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 				FFAB8EC52BA088AA00F3E1BB /* CaseError.swift in Sources */,
 				FFAB8EC12BA0049700F3E1BB /* Level1.swift in Sources */,
 				FFAB8EB82B9FED7700F3E1BB /* main.swift in Sources */,
+				FFAB8EC92BA30C6A00F3E1BB /* Level4.swift in Sources */,
 				FFAB8EBF2BA0047700F3E1BB /* Level2.swift in Sources */,
 				FFAB8EC72BA0890100F3E1BB /* CaseErrorController.swift in Sources */,
+				FFAB8ECB2BA312D000F3E1BB /* Level5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

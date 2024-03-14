@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class Baseball {
+public class InitBaseball {
     
     private var baseballNumbers: Array<Int> = []; // 랜덤한 세 개의 숫자 야구번호 배열
     
@@ -9,10 +9,16 @@ public class Baseball {
     init() {
         while baseballNumbers.count < 3 {
             
-            var randomNumber: Int = Int.random(in: 1...9);
+            let randomNumber: Int = Int.random(in: 0...9);
             
             if !baseballNumbers.contains(randomNumber) {
-                self.baseballNumbers.append(randomNumber);
+                if randomNumber == 0 {
+                    if !baseballNumbers.isEmpty {
+                        self.baseballNumbers.append(randomNumber);
+                    }
+                } else {
+                    self.baseballNumbers.append(randomNumber);
+                }
             }
         }
     }
