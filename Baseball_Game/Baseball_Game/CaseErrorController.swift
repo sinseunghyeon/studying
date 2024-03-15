@@ -12,6 +12,8 @@ func printError(_ error: CaseError) {
         print("첫번째에 0을 입력할 수 없습니다.");
     case .cantValue:
         print("올바른 값이 입력되지 않았습니다.");
+    case .cantLength:
+        print("숫자 3자리만 입력할 수 있습니다.");
     }
     
 }

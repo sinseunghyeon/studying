@@ -67,7 +67,7 @@ public class StartScreen {
                         }
                         break;
                         
-                    case 3:
+                    case 3: // Level6 게임종료 구현
                         print("");
                         print("◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎ 게임을 종료합니다. ◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎");
                         gameRepeat = false;

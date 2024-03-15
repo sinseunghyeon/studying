@@ -43,7 +43,7 @@ class FindBaseballNumbers: InitBaseball {
     // 결과값 출력 함수
     public func printResult() -> Bool {
 
-        if self.strike == 3 {
+        if self.strike == 3 { // 3 Strike 일때, 정답처리
             print("");
             print("◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎ 축하합니다! 정답입니다! ◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎");
             
@@ -56,7 +56,7 @@ class FindBaseballNumbers: InitBaseball {
             self.out = 0;
             
             return false;
-        } else {
+        } else { // 3 Strike가 아닐때, 힌트처리
             print("\(strike) S, \(ball) B, \(out) Out");
             print("랜덤한 숫자 3개 : \(super.getBaseballNumbers())");
             print("");
@@ -83,15 +83,23 @@ public class ChangeToInt {
             printError(.cantValue)
             return [];
         }
+        if isNumber.count < 3 || isNumber.count > 3 { // 입력 값이 3자리 이하 또는 3자리 이상일때 에러처리
+            printError(.cantLength);
+            return [];
+        }
+        if isNumber[isNumber.startIndex] == "0" { // 첫번째가 "0"이면 에러처리
+            printError(.cantUseZero);
+            return [];
+        }
         
         for num in isNumber {
             
-            guard let toInt: Int = num.wholeNumberValue else {
+            guard let toInt: Int = num.wholeNumberValue else { // 숫자가 아닌 값이 들어오면 에러처리
                 printError(.cantChar);
                 return [];
             }
             
-            guard !numbers.contains(toInt) else {
+            guard !numbers.contains(toInt) else { // 같은 숫자가 들어오면 에러처리
                 printError(.cantSameNumber);
                 return[];
             }
