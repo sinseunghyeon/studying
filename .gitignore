@@ -141,3 +141,4 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/cocoapods,xcode,swift,macos
+*.pbxproj
