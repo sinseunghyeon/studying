@@ -1,9 +1,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
-    var toDoListData = ["Item 1", "Item 2", "Item 3"]
+    var toDoListTitle = ["첫번째 일정", "두번째 일정", "세번째 일정"]
+    var toDoListIsCompleted = [false, false, false]
 
     @IBOutlet weak var uiTableView: UITableView!
     
@@ -21,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             let data = ToDoListData(title: field.text ?? "새로운 일정 추가")
-            self.toDoListData.append(data.title)
+            self.toDoListTitle.append(data.title)
             self.refreshUITableView()
         }
         let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel)
@@ -33,22 +34,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(alert, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoListData.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-                cell.textLabel?.text = toDoListData[indexPath.row]
-                return cell
-    }
     
     // UITableView 부분
     func refreshUITableView() {
         uiTableView.frame = view.bounds
         uiTableView.dataSource = self
         uiTableView.delegate = self
-        uiTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        uiTableView.register(ToDoListCell.nib(), forCellReuseIdentifier: ToDoListCell.identifier)
         view.addSubview(uiTableView)
     }
     
@@ -56,7 +49,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.refreshUITableView()
     }
-
-
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return toDoListTitle.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ToDoListCell.identifier, for: indexPath) as? ToDoListCell else {
+            return UITableViewCell()
+        }
+        
+        cell.toDoLabel.text = toDoListTitle[indexPath.row]
+        
+        return cell
+    }
+}
