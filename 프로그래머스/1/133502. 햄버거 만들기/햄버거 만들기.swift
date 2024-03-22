@@ -12,6 +12,12 @@ func solution(_ ingredient:[Int]) -> Int {
             stack.removeLast(4)
             result += 1
         }
+        // 아래의 방법도 가능
+        // let suffix = stack.suffix(4)
+        // if suffix == [1, 2, 3, 1] {
+        //     stack.removeLast(4)
+        //     result += 1
+        // }
     }
     return result
 }
