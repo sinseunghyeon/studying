@@ -3,10 +3,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var toDoListTitle = ["첫번째 일정", "두번째 일정", "세번째 일정"]
-    var toDoListIsCompleted = [false, false, false]
+    public var toDoListTitle = ["첫번째 일정", "두번째 일정", "세번째 일정"]
+    public var toDoListIsCompleted = [false, false, false]
 
     @IBOutlet weak var uiTableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
     
     @IBAction func addToDoList(_ sender: Any) {
         let title: String = "새로운 일정 추가"
@@ -23,21 +24,19 @@ class ViewController: UIViewController {
             }
             let data = ToDoListData(title: field.text ?? "새로운 일정 추가")
             self.toDoListTitle.append(data.title)
-            self.refreshUITableView()
+            self.uiTableView.reloadData()
         }
+        
         let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel)
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
-        
         self.present(alert, animated: true)
     }
     
-    
-    
     // UITableView 부분
-    func refreshUITableView() {
+    func settingUITableView() {
         uiTableView.frame = view.bounds
         uiTableView.dataSource = self
         uiTableView.delegate = self
@@ -47,7 +46,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.refreshUITableView()
+        self.settingUITableView()
+        addButton.layer.cornerRadius = addButton.layer.frame.size.width / 2
+        addButton.clipsToBounds = true
     }
 }
 

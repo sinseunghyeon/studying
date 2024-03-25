@@ -17,19 +17,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZbH-5j-I8f">
-                                <rect key="frame" x="0.0" y="81" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="81" width="393" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmM-Wj-WT2">
-                                <rect key="frame" x="171.66666666666666" y="755" width="50" height="50"/>
+                                <rect key="frame" x="161.66666666666666" y="721" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="QYK-DU-GJL"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="hxM-rQ-oZm"/>
+                                    <constraint firstAttribute="height" constant="70" id="Teu-NZ-eon"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="vKY-tS-amT"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+"/>
                                 <connections>
-                                    <action selector="addToDoList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nx8-7D-XGY"/>
+                                    <action selector="addToDoList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3OA-YC-pi1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,15 +37,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZbH-5j-I8f" secondAttribute="trailing" id="62t-l4-EOj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mmM-Wj-WT2" secondAttribute="bottom" constant="27" id="7cl-l5-8ss"/>
                             <constraint firstItem="ZbH-5j-I8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hp3-3F-B3P"/>
-                            <constraint firstItem="mmM-Wj-WT2" firstAttribute="top" secondItem="ZbH-5j-I8f" secondAttribute="bottom" constant="8" symbolic="YES" id="Q0g-dX-tmD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mmM-Wj-WT2" secondAttribute="bottom" constant="13" id="ddi-OU-nNZ"/>
+                            <constraint firstItem="mmM-Wj-WT2" firstAttribute="top" secondItem="ZbH-5j-I8f" secondAttribute="bottom" constant="8" symbolic="YES" id="JdL-wG-OYQ"/>
+                            <constraint firstItem="mmM-Wj-WT2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Teb-J2-1DV"/>
                             <constraint firstItem="ZbH-5j-I8f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iGh-lA-RVs"/>
                             <constraint firstItem="ZbH-5j-I8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="jKh-iH-29u"/>
-                            <constraint firstItem="mmM-Wj-WT2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obb-Ph-ixb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="mmM-Wj-WT2" id="rR7-yK-Pbf"/>
                         <outlet property="uiTableView" destination="ZbH-5j-I8f" id="uIg-h1-omO"/>
                     </connections>
                 </viewController>
