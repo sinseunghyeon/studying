@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addTextField { textField in
             textField.placeholder = "새로운 일정 추가"
+            textField.autocorrectionType = .no
+            textField.spellCheckingType = .no
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         uiTableView.dataSource = self
         uiTableView.delegate = self
         uiTableView.register(ToDoListCell.nib(), forCellReuseIdentifier: ToDoListCell.identifier)
+        uiTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(uiTableView)
     }
     
