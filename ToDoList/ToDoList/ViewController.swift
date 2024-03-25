@@ -67,4 +67,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // 데이터 소스에서 해당 데이터를 삭제합니다.
+            toDoListTitle.remove(at: indexPath.row)
+            // 테이블 뷰에서 셀을 삭제합니다.
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
 }
