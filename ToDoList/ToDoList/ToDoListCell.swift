@@ -15,7 +15,6 @@ class ToDoListCell: UITableViewCell {
         
         if !sender.isSelected {
             sender.isSelected = true
-            sender.backgroundColor = .clear // 예시로 투명 색상을 설정했습니다.
             circleButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
             
             let attributeString = NSMutableAttributedString(string: toDoLabel.text ?? "")
@@ -26,7 +25,6 @@ class ToDoListCell: UITableViewCell {
             toDoLabel.attributedText = attributeString
         } else {
             sender.isSelected = false
-            sender.backgroundColor = .clear // 예시로 투명 색상을 설정했습니다.
             circleButton.setImage(UIImage(systemName: "circle"), for: .normal)
             
             let attributeString = NSMutableAttributedString(string: toDoLabel.text ?? "")

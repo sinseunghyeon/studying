@@ -3,8 +3,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    public var toDoListTitle = ["첫번째 일정", "두번째 일정", "세번째 일정"]
-    public var toDoListIsCompleted = [false, false, false]
+    public var toDoListData = ToDoListDataManager()
 
     @IBOutlet weak var uiTableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
@@ -18,6 +17,8 @@ class ViewController: UIViewController {
             textField.placeholder = "새로운 일정 추가"
             textField.autocorrectionType = .no
             textField.spellCheckingType = .no
+            textField.translatesAutoresizingMaskIntoConstraints = false
+//            textField.frame = CGRect(x: 0, y: 0, width: 270, height: 24)
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
                 return
             }
             let data = ToDoListData(title: field.text ?? "새로운 일정 추가")
-            self.toDoListTitle.append(data.title)
+            self.toDoListData.updateTodoListData(data.title)
             self.uiTableView.reloadData()
         }
         
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoListTitle.count
+        return toDoListData.getToDoListCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +67,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.toDoLabel.text = toDoListTitle[indexPath.row]
+        cell.toDoLabel.text = toDoListData.getToDoListTitle(indexPath.row)
         
         return cell
     }
@@ -74,8 +75,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // 데이터 소스에서 해당 데이터를 삭제합니다.
-            toDoListTitle.remove(at: indexPath.row)
-            // 테이블 뷰에서 셀을 삭제합니다.
+            toDoListData.deleteTodoListData(indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
