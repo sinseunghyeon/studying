@@ -67,8 +67,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        let nowDate = Date() // 현재의 Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd"
+        let str = dateFormatter.string(from: nowDate) // 현재 시간의 Date를 format에 맞춰 string으로 반환
+        
         cell.toDoLabel.text = toDoListData.getToDoListTitle(indexPath.row)
         cell.importace.tintColor = toDoListData.getToDoListImportance(indexPath.row)
+        cell.dateLabel.text = str
         
         return cell
     }

@@ -11,6 +11,7 @@ class ToDoListCell: UITableViewCell {
     @IBOutlet weak var circleButton: UIButton!
     @IBOutlet weak var toDoLabel: UILabel!
     @IBOutlet weak var importace: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBAction func checkDone(_ sender: UIButton) {
         

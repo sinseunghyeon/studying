@@ -11,10 +11,10 @@ public class ToDoListDataManager {
             ToDoListData(title: "데일리 스크럼 작성", importance: .first),
             ToDoListData(title: "알고리즘 문제 풀기", importance: .first),
             ToDoListData(title: "10시 반 회의", importance: .first),
-            ToDoListData(title: "알고리즘 풀이 블로그 작성"),
+            ToDoListData(title: "알고리즘 풀이 블로그 작성", importance: .second),
             ToDoListData(title: "점심", importance: .third),
             ToDoListData(title: "집중코딩", importance: .second),
-            ToDoListData(title: "저녁"),
+            ToDoListData(title: "저녁", importance: .third),
             ToDoListData(title: "TIL 작성"),
             ToDoListData(title: "8시 회의")
         ]
@@ -37,7 +37,7 @@ public class ToDoListDataManager {
         case .first:
             return UIColor.red
         case .second:
-            return UIColor.yellow
+            return UIColor.orange
         case .third:
             return UIColor.green
         default:

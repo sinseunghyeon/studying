@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-P3-GHy">
-                        <rect key="frame" x="20" y="1" width="330" height="48"/>
+                        <rect key="frame" x="20" y="1" width="365" height="48"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-lu-g4J">
                                 <rect key="frame" x="0.0" y="7" width="50.666666666666664" height="34.333333333333336"/>
@@ -35,20 +35,31 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ok-Ii-SHs">
-                                <rect key="frame" x="65.666666666666686" y="13.999999999999998" width="230" height="20.333333333333329"/>
+                                <rect key="frame" x="65.666666666666686" y="13.999999999999998" width="200" height="20.333333333333329"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="dfz-wH-MAy"/>
+                                    <constraint firstAttribute="width" constant="200" id="dfz-wH-MAy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-XY-4XO">
+                                <rect key="frame" x="280.66666666666669" y="13.999999999999998" width="50" height="20.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Bf5-cW-eCo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wJf-8m-PWp">
-                                <rect key="frame" x="310.66666666666669" y="15.333333333333332" width="19.333333333333314" height="18.333333333333332"/>
+                                <rect key="frame" x="345.66666666666669" y="15.333333333333332" width="19.333333333333314" height="18.333333333333332"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="x4n-XY-4XO" firstAttribute="centerY" secondItem="vIK-P3-GHy" secondAttribute="centerY" id="2e2-Nf-gYc"/>
+                            <constraint firstItem="wJf-8m-PWp" firstAttribute="centerY" secondItem="vIK-P3-GHy" secondAttribute="centerY" id="Kmc-nZ-jti"/>
                             <constraint firstItem="7ok-Ii-SHs" firstAttribute="centerY" secondItem="vIK-P3-GHy" secondAttribute="centerY" id="Xbc-uf-k7e"/>
                         </constraints>
                     </stackView>
@@ -63,6 +74,7 @@
             <gestureRecognizers/>
             <connections>
                 <outlet property="circleButton" destination="vRF-lu-g4J" id="CuZ-Gr-edw"/>
+                <outlet property="dateLabel" destination="x4n-XY-4XO" id="51S-QP-3LN"/>
                 <outlet property="importace" destination="wJf-8m-PWp" id="O2h-Zd-VhD"/>
                 <outlet property="toDoLabel" destination="7ok-Ii-SHs" id="TKF-ge-oAR"/>
             </connections>
