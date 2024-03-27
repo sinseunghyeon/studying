@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 public class ToDoListDataManager {
     
@@ -31,8 +32,17 @@ public class ToDoListDataManager {
         return DataArray[row].isCompleted
     }
     
-    public func getToDoListImportance(_ row: Int) -> ImportanceType {
-        return DataArray[row].importance ?? .nothing
+    public func getToDoListImportance(_ row: Int) -> UIColor {
+        switch DataArray[row].importance {
+        case .first:
+            return UIColor.red
+        case .second:
+            return UIColor.yellow
+        case .third:
+            return UIColor.green
+        default:
+            return UIColor.clear
+        }
     }
     
     public func getToDoListTitle(_ row: Int) -> String {

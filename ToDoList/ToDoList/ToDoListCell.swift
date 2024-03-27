@@ -10,12 +10,13 @@ class ToDoListCell: UITableViewCell {
     
     @IBOutlet weak var circleButton: UIButton!
     @IBOutlet weak var toDoLabel: UILabel!
+    @IBOutlet weak var importace: UIImageView!
     
     @IBAction func checkDone(_ sender: UIButton) {
         
         if !sender.isSelected {
             sender.isSelected = true
-            circleButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+            circleButton.setImage(UIImage(systemName: "circle.inset.filled"), for: .normal)
             
             let attributeString = NSMutableAttributedString(string: toDoLabel.text ?? "")
             attributeString.addAttribute(.strikethroughStyle,

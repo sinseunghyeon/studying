@@ -68,6 +68,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.toDoLabel.text = toDoListData.getToDoListTitle(indexPath.row)
+        cell.importace.tintColor = toDoListData.getToDoListImportance(indexPath.row)
         
         return cell
     }

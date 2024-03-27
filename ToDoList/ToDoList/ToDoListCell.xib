@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-P3-GHy">
-                        <rect key="frame" x="20" y="1" width="315.66666666666669" height="48"/>
+                        <rect key="frame" x="20" y="1" width="330" height="48"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-lu-g4J">
                                 <rect key="frame" x="0.0" y="7" width="50.666666666666664" height="34.333333333333336"/>
@@ -34,14 +35,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ok-Ii-SHs">
-                                <rect key="frame" x="65.666666666666686" y="13.999999999999998" width="250" height="20.333333333333329"/>
+                                <rect key="frame" x="65.666666666666686" y="13.999999999999998" width="230" height="20.333333333333329"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="dfz-wH-MAy"/>
+                                    <constraint firstAttribute="width" constant="230" id="dfz-wH-MAy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wJf-8m-PWp">
+                                <rect key="frame" x="310.66666666666669" y="15.333333333333332" width="19.333333333333314" height="18.333333333333332"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="7ok-Ii-SHs" firstAttribute="centerY" secondItem="vIK-P3-GHy" secondAttribute="centerY" id="Xbc-uf-k7e"/>
@@ -58,15 +63,17 @@
             <gestureRecognizers/>
             <connections>
                 <outlet property="circleButton" destination="vRF-lu-g4J" id="CuZ-Gr-edw"/>
+                <outlet property="importace" destination="wJf-8m-PWp" id="O2h-Zd-VhD"/>
                 <outlet property="toDoLabel" destination="7ok-Ii-SHs" id="TKF-ge-oAR"/>
             </connections>
             <point key="canvasLocation" x="-408.39694656488547" y="165.49295774647888"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="circle" catalog="system" width="32" height="32"/>
+        <image name="flag.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
