@@ -27,7 +27,8 @@ class ViewController: UIViewController {
             }
             let data = ToDoListData(title: field.text ?? "새로운 일정 추가")
             self.toDoListData.updateTodoListData(data.title)
-            self.uiTableView.reloadData()
+            let indexPath = IndexPath(row: self.toDoListData.getToDoListCount() - 1, section: 0)
+            self.uiTableView.insertRows(at: [indexPath], with: .fade)
         }
         
         let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel)
@@ -67,14 +68,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let nowDate = Date() // 현재의 Date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd"
-        let str = dateFormatter.string(from: nowDate) // 현재 시간의 Date를 format에 맞춰 string으로 반환
-        
         cell.toDoLabel.text = toDoListData.getToDoListTitle(indexPath.row)
         cell.importace.tintColor = toDoListData.getToDoListImportance(indexPath.row)
-        cell.dateLabel.text = str
+        cell.dateLabel.text = toDoListData.getToDoListDate(indexPath.row)
         
         return cell
     }

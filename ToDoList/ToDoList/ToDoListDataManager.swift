@@ -48,6 +48,10 @@ public class ToDoListDataManager {
     public func getToDoListTitle(_ row: Int) -> String {
         return DataArray[row].title
     }
+    
+    public func getToDoListDate(_ row: Int) -> String {
+        return DataArray[row].nowDate
+    }
         
     public func updateTodoListData(_ title: String) {
         let todo = ToDoListData(title: title)
