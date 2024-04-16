@@ -5,9 +5,7 @@ func solution(_ k:Int, _ dungeons:[[Int]]) -> Int {
     var visited = [Bool](repeating: false, count: dungeons.count)
     
     func dfs(count: Int, pirodo: Int) {
-        if result < count{
-            result = count
-        }
+        result = max(result, count)
         for i in 0..<dungeons.count{
             if !visited[i] && dungeons[i][0] <= pirodo {
                 visited[i] = true
