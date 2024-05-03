@@ -53,8 +53,8 @@ public class ToDoListDataManager {
         return DataArray[row].nowDate
     }
         
-    public func updateTodoListData(_ title: String) {
-        let todo = ToDoListData(title: title)
+    public func updateTodoListData(_ title: String, importace: ImportanceType? = .nothing) {
+        let todo = ToDoListData(title: title, importance: importace)
         DataArray.append(todo)
     }
         
