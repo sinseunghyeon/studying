@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct AVData: Decodable {
+    let id: Int
+    let title: String
+    let thumbnailUrl: URL
+    let duration: Double
+    let uploadTime: String
+    let views: String
+    let author: String
+    let videoUrl: URL
+    let description: String
+    let subscriber: String
+    let isLive: Bool
+}
